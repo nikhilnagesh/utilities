@@ -33,34 +33,32 @@ vgInfoFmt = 50
 #######################################################################################################################################
 #  Input Arguments
 #######################################################################################################################################
-#vlUserName = os.getlogin()
-
+# vlUserName = os.getlogin()
 #
 #--------> Debug Commented
 #
-vlArgCheck = len(sys.argv) - 1
-if vlArgCheck < 3:
-    print(
-        "Insufficient arguments passed. \n The code takes exactly 3 parameters \n Parameter 1: Process name\n Parameter 2: Worklfow name \n Parameter 3: Parameter file name\n"
-    )
-    print("Usage :- python " + sys.argv[0] +
-          " process_name workflow_name parameter_name")
-    sys.exit(1)
-else:
-    pProc = sys.argv[1]
-    pWfFileName = sys.argv[2]
-    pParam = sys.argv[3]
+# vlArgCheck = len(sys.argv) - 1
+# if vlArgCheck < 3:
+    # print(
+        # "Insufficient arguments passed. \n The code takes exactly 3 parameters \n Parameter 1: Process name\n Parameter 2: Worklfow name \n Parameter 3: Parameter file name\n"
+    # )
+    # print("Usage :- python " + sys.argv[0] +
+          # " process_name workflow_name parameter_name")
+    # sys.exit(1)
+# else:
+    # pProc = sys.argv[1]
+    # pWfFileName = sys.argv[2]
+    # pParam = sys.argv[3]
 #
 #--------> Debug Add   
 #
-# pProc = 'PROVIDER'
-# pWfFileName = 'w_818_X3T_101_LOAD_ACTIVITY_REC_STG'
-# pParam = '818_X3T_PROVIDER'
+pProc = 'PROVIDER'
+pWfFileName = 'w_818_X3T_101_LOAD_ACTIVITY_REC_STG'
+pParam = '818_X3T_PROVIDER'
 
 #######################################################################################################################################
 #  Config Folders Read, Report Files and Log files creation
 #######################################################################################################################################
-vlUserName = 't145129'
 vlLogDir = "logs"
 vlRptDir = "reports"
 vlCurWrDir = os.getcwd()
@@ -72,12 +70,12 @@ vlDateTime = str(datetime.utcnow().strftime('%Y-%m-%d %I:%M:%S'))
 #
 #--------> Debug Commented
 #
-if os.path.isfile(vlCurWrDir+'/'+pWfFileName+'.XML'):
-    os.remove(vlCurWrDir+'/'+pWfFileName+'.XML')
-if not os.path.exists(vlLogPath):
-    os.makedirs(vlLogPath, mode=0755)
-if not os.path.exists(vlRptPath):
-    os.makedirs(vlRptPath, mode=0755)
+# if os.path.isfile(vlCurWrDir+'/'+pWfFileName+'.XML'):
+    # os.remove(vlCurWrDir+'/'+pWfFileName+'.XML')
+# if not os.path.exists(vlLogPath):
+    # os.makedirs(vlLogPath, mode=0755)
+# if not os.path.exists(vlRptPath):
+    # os.makedirs(vlRptPath, mode=0755)
 vlErroCntr = 0
 vlRptName = pProc + '_' + pWfFileName + '_' + pParam + '_' + 'SummaryReport.txt'
 vlReport = open(vlRptPath + '/' + vlRptName, "w+")
@@ -269,11 +267,11 @@ def main():
             format(pProc))
         vlRepoFol = pProc
 #--------> Debug Add
-    vlCmd = "%s %s %s %s" % (vlCurWrDir + '/exportWorkflow.sh', vlUserName,
-                             pWfFileName, vlRepoFol)
+    # vlCmd = "%s %s %s %s" % (vlCurWrDir + '/exportWorkflow.sh', vlUserName,
+                             # pWfFileName, vlRepoFol)
 
-    #Invoke the shell script to fetch the workflow xml file from repository
-    os.system(vlCmd)
+    # #Invoke the shell script to fetch the workflow xml file from repository
+    # os.system(vlCmd)
 
     #Read the param file
     try:
