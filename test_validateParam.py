@@ -261,7 +261,7 @@ def main():
 
     try:
         vlProc = pProc.lower()
-        vlRepoFol = func_Proc(vlProc)
+        vlRepoFol = test_func_Proc(vlProc)
     except:
         print(
             "The {} is unknown for the tool, test cases may be inappropriate".
@@ -315,10 +315,10 @@ def main():
         sys.exit(1)
 
     # Call the method to validate parameter file
-    func_ValidateParam(vlOpenFile)
+    test_func_ValidateParam(vlOpenFile)
 
     # Call the method to validate param path in workflow
-    func_WorkflowPropCheck(vlXmlTree)
+    test_func_WorkflowPropCheck(vlXmlTree)
 
     vlReport.write("".center(vgTxtFmt, '-') + "\n")
 
