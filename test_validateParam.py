@@ -235,7 +235,7 @@ test_func_WorkflowPropCheck(vlXmlTree)
 #######################################################################################################################################
 
 
-def main():
+def test_main():
     logging.info("Run Date/Time: {}".format(vlDateTime))
     logging.info("User Name: {}".format(vlUserName))
     logging.info("Process Name: {}".format(pProc))
@@ -361,4 +361,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    test_main()
