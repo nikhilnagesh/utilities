@@ -225,11 +225,6 @@ def test_func_WorkflowPropCheck(arg_ParsedXml):
                                  snode.attrib['VALUE']
                         .ljust(vgWriteFmt, ' ') + " {}\n".format(':PASS'))
 
-# Call the method to validate parameter file
-test_func_ValidateParam(vlOpenFile)
-
-# Call the method to validate param path in workflow
-test_func_WorkflowPropCheck(vlXmlTree)
 #######################################################################################################################################
 #  Main section
 #######################################################################################################################################
