@@ -116,7 +116,7 @@ elif len(sys.argv) > 1:
 #######################################################################################################################################
 #  Methods section
 #######################################################################################################################################
-def test_func_Proc(arg_Proc):
+def test_func_Proc(pProc):
     return {
         'provider': 'tst_provider',
         'providerloads': 'tst_provider',
@@ -133,7 +133,7 @@ def test_func_Proc(arg_Proc):
         'client': 'EE_Client_Load',
         'clientloads': 'EE_Client_Load',
         'client_loads': 'EE_Client_Load'
-    }[arg_Proc]
+    }[pProc]
 
 
 def test_func_ValidateParam(arg_ParamFile):
@@ -225,7 +225,11 @@ def test_func_WorkflowPropCheck(arg_ParsedXml):
                                  snode.attrib['VALUE']
                         .ljust(vgWriteFmt, ' ') + " {}\n".format(':PASS'))
 
+# Call the method to validate parameter file
+test_func_ValidateParam(vlOpenFile)
 
+# Call the method to validate param path in workflow
+test_func_WorkflowPropCheck(vlXmlTree)
 #######################################################################################################################################
 #  Main section
 #######################################################################################################################################
