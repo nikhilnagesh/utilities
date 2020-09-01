@@ -115,7 +115,7 @@ elif len(sys.argv) > 1:
 #######################################################################################################################################
 #  Methods section
 #######################################################################################################################################
-def func_Proc(arg_Proc):
+def test_func_Proc(arg_Proc):
     return {
         'provider': 'tst_provider',
         'providerloads': 'tst_provider',
@@ -135,7 +135,7 @@ def func_Proc(arg_Proc):
     }[arg_Proc]
 
 
-def func_ValidateParam(arg_ParamFile):
+def test_func_ValidateParam(arg_ParamFile):
     global vlErroCntr
     for iLnNum, iLines in enumerate(arg_ParamFile, 1):
         iLine = iLines.strip()
@@ -202,7 +202,7 @@ def func_ValidateParam(arg_ParamFile):
                     vlErroCntr += 1
 
 
-def func_WorkflowPropCheck(arg_ParsedXml):
+def test_func_WorkflowPropCheck(arg_ParsedXml):
     global vlErroCntr
     for node in arg_ParsedXml.iter('WORKFLOW'):
         for snode in node:
