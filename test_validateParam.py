@@ -77,8 +77,9 @@ vlDateTime = str(datetime.utcnow().strftime('%Y-%m-%d %I:%M:%S'))
 # if not os.path.exists(vlRptPath):
     # os.makedirs(vlRptPath, mode=0755)
 vlErroCntr = 0
-vlRptName = pProc + '_' + pWfFileName + '_' + pParam + '_' + 'SummaryReport.txt'
-vlReport = open(vlRptPath + '/' + vlRptName, "w+")
+#vlRptName = pProc + '_' + pWfFileName + '_' + pParam + '_' + 'SummaryReport.txt'
+vlRptName = 'SummaryReport.txt'
+vlReport = open(vlRptName, "w+")
 
 #######################################################################################################################################
 #  Logger and Levels
@@ -97,7 +98,7 @@ if len(sys.argv) < 2:
     logging.basicConfig(
         format='%(asctime)s  - %(levelname)-7s >>> %(message)s',
         datefmt='%y%y-%m-%d %H:%M:%S',
-        filename=vlLogPath + '/' + vlLogFileNm,
+        filename=vlLogFileNm,
         filemode='w+',
         level=level)
 
@@ -107,7 +108,7 @@ elif len(sys.argv) > 1:
     logging.basicConfig(
         format='%(asctime)s  - %(levelname)-7s >>> %(message)s',
         datefmt='%y%y-%m-%d %H:%M:%S',
-        filename=vlLogPath + '/' + vlLogFileNm,
+        filename=vlLogFileNm,
         filemode='w+',
         level=level)
 
