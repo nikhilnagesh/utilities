@@ -20,16 +20,14 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
-
-- task: DownloadGitHubRelease@0
+- task: CopyFiles@2
   inputs:
-    connection: 'nikhilnagesh'
-    userRepository: 'utilities'
-    defaultVersionType: 'latest'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    SourceFolder: '$(agent.builddirectory)'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop0'
+    ArtifactName: 'drop'
     publishLocation: 'Container'
