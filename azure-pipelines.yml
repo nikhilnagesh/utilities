@@ -20,7 +20,12 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
-
+- task: CopyFiles@2
+  inputs:
+    Contents: |
+      **
+      !.gitignore
+    TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
 
 - task: PublishBuildArtifacts@1
   inputs:
