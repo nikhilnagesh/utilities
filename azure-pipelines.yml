@@ -13,12 +13,16 @@ strategy:
     Python27:
       python.version: '2.7'
 
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayName: 'Use Python $(python.version)'
+
 - task: CopyFiles@2
   inputs:
-    Contents: |
-      **
-      !.gitignore
-      !.azure-pipelines.yml
+    Contents: '**'
     TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
 
 - task: PublishBuildArtifacts@1
