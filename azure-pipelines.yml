@@ -18,10 +18,10 @@ strategy:
   inputs:
     SourceFolder: 
     Contents: '**'
-    TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
+    TargetFolder: '$(System.DefaultWorkingDirectory/bin)'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/bin'
+    PathtoPublish: '$(System.DefaultWorkingDirectory/bin)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
