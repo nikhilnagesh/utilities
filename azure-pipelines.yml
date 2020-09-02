@@ -13,15 +13,16 @@ strategy:
     Python27:
       python.version: '2.7'
 
-
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 
-    Contents: '**'
-    TargetFolder: '$(System.DefaultWorkingDirectory/bin)'
+    Contents: |
+      **
+      !.gitignore
+      !.azure-pipelines.yml
+    TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory/bin)'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/bin'
     ArtifactName: 'drop'
     publishLocation: 'Container'
