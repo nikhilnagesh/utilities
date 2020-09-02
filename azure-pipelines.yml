@@ -26,7 +26,7 @@ steps:
       **
       !.gitignore
       !.git/**/*
-      !.azure-pipelines.yml
+      !azure-pipelines.yml
     TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
 
 - task: PublishBuildArtifacts@1
