@@ -1,11 +1,11 @@
 repo:
   - ./*
 
-files:
+file1:
   - utilities/*.py
 
-files:
+file2:
   - utilities/*.sh
 
-files:
+file3:
   - utilities/*.xml
