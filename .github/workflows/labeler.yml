@@ -5,17 +5,14 @@
 # file with configuration.  For more information, see:
 # https://github.com/actions/labeler
 
-name: ChangeNo
-on: [pull_request]
+name: "Pull Request Labeler"
+on:
+- pull_request_target
 
 jobs:
-  label:
+  triage:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
     steps:
-    - id: step1
-      run: echo "::set-output name=test::Testing the pull request files"  
-    - uses: actions/labeler@v2
+    - uses: actions/labeler@main
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
