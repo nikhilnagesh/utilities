@@ -4,8 +4,8 @@ repo:
 file1:["python"]
   - utilities/*.py
 
-file2:[shell]
+file2:["shell"]
   - utilities/*.sh
 
-file3:[xml]
+file3:["xml"]
   - utilities/*.xml
