@@ -1,14 +1,3 @@
-repo:
-  - ./*
+label1:
+  - utilities/*
 
-python:
-- any: ['utilities/*.py']
-
-shell:
-- any: ['utilities/*.sh']
-
-xml:
-- any: ['utilities/*.xml']
-
-param:
-- any: ['utilities/*.ini']
