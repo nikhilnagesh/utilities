@@ -2,13 +2,13 @@ repo:
   - ./*
 
 python:
-- any: [utilities/*.py]
+- any: ['utilities/*.py']
 
 shell:
-- any: [utilities/*.sh]
+- any: ['utilities/*.sh']
 
 xml:
-- any: [utilities/*.xml]
+- any: ['utilities/*.xml']
 
 param:
-- any: [utilities/*.ini]
+- any: ['utilities/*.ini']
