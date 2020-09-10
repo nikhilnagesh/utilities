@@ -10,7 +10,8 @@ on: [pull_request]
 
 jobs:
   label:
-
+  - any: ['validateParam.py','exportWorkflow.sh']
+    
     runs-on: ubuntu-latest
 
     steps:
