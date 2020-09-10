@@ -1,11 +1,14 @@
 repo:
   - ./*
 
-file1:["python"]
-  - utilities/*.py
+python:
+- any: [utilities/*.py]
 
-file2:["shell"]
-  - utilities/*.sh
+shell:
+- any: [utilities/*.sh]
 
-file3:["xml"]
-  - utilities/*.xml
+xml:
+- any: [utilities/*.xml]
+
+param:
+- any: [utilities/*.ini]
