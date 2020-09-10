@@ -2,12 +2,11 @@
 
 ##################################################################################################################################
 #  Program Name         : exportWorkflow.sh
-#  Brief Description    : This script is used to export the workflow from repository and check the coding 
-#                         standards of Workflow, session and mapping
+#  Brief Description    : This script is used to export the workflow from repository and check the param file name and path.
 #  Author               : Nikhil Nagesh
 #  Email                : Nikhil.Nagesh@evry.com
 #  Created Date         : 2020-26-08
-#  Last Modified Date   : 2020-26-08
+#  Last Modified Date   : 2020-10-09
 #  Executing method     : ./exportWorkflow.sh userid workflowName repoFolderName
 #  Additional Arguments : None
 #  Property Files used  : None
