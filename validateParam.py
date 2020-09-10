@@ -53,7 +53,6 @@ vgInfoFmt = 50
 #
 #--------> Debug Add   
 #
-#
 pProc = 'PROVIDER'
 pWfFileName = 'w_818_X3T_101_LOAD_ACTIVITY_REC_STG'
 pParam = '818_X3T_PROVIDER'
