@@ -58,7 +58,7 @@ pWfFileName = 'w_818_X3T_101_LOAD_ACTIVITY_REC_STG'
 pParam = '818_X3T_PROVIDER'
 
 #######################################################################################################################################
-#  Config Folders Read, Report Files and Log files creation
+#  Config Folders Read, Report Files and Log files creation############################
 #######################################################################################################################################
 vlLogDir = "logs"
 vlRptDir = "reports"
