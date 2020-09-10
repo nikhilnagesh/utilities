@@ -2,10 +2,13 @@ repo:
   - ./*
 
 pyFileChg:
-  - utilities/*.py
+  files:
+    - utilities/*.py
 
 shFileChg:
-  - utilities/*.sh
+  files:
+    - utilities/*.sh
 
 excelFileAdd:
- - utilities/*.xml
+  files:
+    - utilities/*.xml
