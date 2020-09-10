@@ -318,7 +318,6 @@ def main():
 
     # Call the method to validate param path in workflow
     func_WorkflowPropCheck(vlXmlTree)
-
     vlReport.write("".center(vgTxtFmt, '-') + "\n")
 
     global vlErroCntr
