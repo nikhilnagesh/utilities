@@ -1,2 +1,11 @@
-test:
+repo:
+  - ./*
+
+pyFileChg:
   - utilities/*.py
+
+shFileChg:
+  - utilities/*.sh
+
+excelFileAdd:
+ - utilities/*.xml
