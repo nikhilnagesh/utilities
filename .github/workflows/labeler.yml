@@ -10,10 +10,12 @@ on: [pull_request]
 
 jobs:
   label:
-
     runs-on: ubuntu-latest
-
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
     steps:
     - uses: actions/labeler@v2
+    - id: step1
+      run: echo "::set-output name=test::Testing the pull request files"  
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
