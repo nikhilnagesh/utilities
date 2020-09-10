@@ -314,11 +314,10 @@ def main():
         sys.exit(1)
 
     # Call the method to validate parameter file
-    test_func_ValidateParam(vlOpenFile)
+    func_ValidateParam(vlOpenFile)
 
     # Call the method to validate param path in workflow
-    test_func_WorkflowPropCheck(vlXmlTree)
-
+    func_WorkflowPropCheck(vlXmlTree)
     vlReport.write("".center(vgTxtFmt, '-') + "\n")
 
     global vlErroCntr
