@@ -1,5 +1,5 @@
 ##################################################################################################################################
-# Adding to comment to check labels
+# Adding to comment to check labels via pr
 #  Program Name: validateParam.py
 #  Brief Description:
 #  Author: Nikhil Nagesh
