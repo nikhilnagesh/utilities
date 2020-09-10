@@ -1,11 +1,3 @@
-repo:
-  - ./*
+label1:
+  - utilities/*
 
-file1:["python"]
-  - utilities/*.py
-
-file2:["shell"]
-  - utilities/*.sh
-
-file3:["xml"]
-  - utilities/*.xml
