@@ -116,7 +116,7 @@ elif len(sys.argv) > 1:
 #######################################################################################################################################
 #  Methods section
 #######################################################################################################################################
-def test_func_Proc(pProc):
+def func_Proc(pProc):
     return {
         'provider': 'tst_provider',
         'providerloads': 'tst_provider',
@@ -136,7 +136,7 @@ def test_func_Proc(pProc):
     }[pProc]
 
 
-def test_func_ValidateParam(arg_ParamFile):
+def func_ValidateParam(arg_ParamFile):
     global vlErroCntr
     for iLnNum, iLines in enumerate(arg_ParamFile, 1):
         iLine = iLines.strip()
@@ -203,7 +203,7 @@ def test_func_ValidateParam(arg_ParamFile):
                     vlErroCntr += 1
 
 
-def test_func_WorkflowPropCheck(arg_ParsedXml):
+def func_WorkflowPropCheck(arg_ParsedXml):
     global vlErroCntr
     for node in arg_ParsedXml.iter('WORKFLOW'):
         for snode in node:
@@ -230,7 +230,7 @@ def test_func_WorkflowPropCheck(arg_ParsedXml):
 #######################################################################################################################################
 
 
-def test_main():
+def main():
     logging.info("Run Date/Time: {}".format(vlDateTime))
     logging.info("User Name: {}".format(vlUserName))
     logging.info("Process Name: {}".format(pProc))
@@ -356,4 +356,4 @@ def test_main():
 
 
 if __name__ == "__main__":
-    test_main()
+    main()
