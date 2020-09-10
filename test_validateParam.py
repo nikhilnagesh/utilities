@@ -4,7 +4,7 @@
 #  Author: Nikhil Nagesh
 #  Email: Nikhil.Nagesh@evry.com
 #  Created Date:  08/26/2020
-#  Last Modified Date: 08/26/2020
+#  Last Modified Date: 09/10/2020
 #  Executing method: python validateParam.py PROVIDER w_127_B4T_101_LOAD_ACTIVITY_REC_STG 127_B4T_PROVIDER
 #                    python validateParam.py RESOURCE wf_SET_445_RSC_V1 SET_445_RSC_V1
 #                    python validateParam.py PRESTAGE wf_XKTX3TNRX_V1_ClmsPro_SRC_2_PSTG XKTX3TNRX_V1_ClmsPro_src2pstg
@@ -35,7 +35,7 @@ vgInfoFmt = 50
 #######################################################################################################################################
 # vlUserName = os.getlogin()
 #
-#--------> Debug Commented
+#--------> Debug Commented: To Manually run the workflow without passing arguments.
 #
 # vlArgCheck = len(sys.argv) - 1
 # if vlArgCheck < 3:
