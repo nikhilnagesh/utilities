@@ -34,7 +34,7 @@ vgInfoFmt = 50
 #  Input Arguments
 #######################################################################################################################################
 # vlUserName = os.getlogin()
-# ======> Adding the dummy row to generate merge conflict
+#
 #--------> Debug Commented: To Manually run the workflow without passing arguments.
 #
 # vlArgCheck = len(sys.argv) - 1
@@ -116,7 +116,7 @@ elif len(sys.argv) > 1:
 #######################################################################################################################################
 #  Methods section
 #######################################################################################################################################
-def func_Proc(pProc):
+def test_func_Proc(pProc):
     return {
         'provider': 'tst_provider',
         'providerloads': 'tst_provider',
@@ -136,7 +136,7 @@ def func_Proc(pProc):
     }[pProc]
 
 
-def func_ValidateParam(arg_ParamFile):
+def test_func_ValidateParam(arg_ParamFile):
     global vlErroCntr
     for iLnNum, iLines in enumerate(arg_ParamFile, 1):
         iLine = iLines.strip()
@@ -203,7 +203,7 @@ def func_ValidateParam(arg_ParamFile):
                     vlErroCntr += 1
 
 
-def func_WorkflowPropCheck(arg_ParsedXml):
+def test_func_WorkflowPropCheck(arg_ParsedXml):
     global vlErroCntr
     for node in arg_ParsedXml.iter('WORKFLOW'):
         for snode in node:
@@ -230,7 +230,7 @@ def func_WorkflowPropCheck(arg_ParsedXml):
 #######################################################################################################################################
 
 
-def main():
+def test_main():
     logging.info("Run Date/Time: {}".format(vlDateTime))
     logging.info("User Name: {}".format(vlUserName))
     logging.info("Process Name: {}".format(pProc))
@@ -314,10 +314,11 @@ def main():
         sys.exit(1)
 
     # Call the method to validate parameter file
-    func_ValidateParam(vlOpenFile)
+    test_func_ValidateParam(vlOpenFile)
 
     # Call the method to validate param path in workflow
-    func_WorkflowPropCheck(vlXmlTree)
+    test_func_WorkflowPropCheck(vlXmlTree)
+
     vlReport.write("".center(vgTxtFmt, '-') + "\n")
 
     global vlErroCntr
@@ -355,4 +356,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    test_main()
