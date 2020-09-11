@@ -31,4 +31,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Testing hms_deployment manager
         run: |
-            bash ./ulitilies/shFol/testFile.sh
+            bash ${GITHUB_WORKSPACE}/shFol/testFile.sh
