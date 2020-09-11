@@ -1,13 +1,19 @@
 # This is a basic workflow to help you get started with Actions
-
-name: Test Workflow
+# Author : Nikhil Nagesh
+name: Workflow-Verify Dep Mgr File
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
     branches: [ master ]
+    paths-ignore: 
+      - 'utilities/README.md'
+      - '.github/**/*'
   pull_request:
+    paths-ignore: 
+      - 'utilities/README.md'
+      - '.github/**/*'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
