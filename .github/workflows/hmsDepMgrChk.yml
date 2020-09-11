@@ -7,19 +7,11 @@ name: Workflow-Verify Dep Mgr File
 on:
   push:
     branches: [ master ]
-    paths-ignore: 
-      - '**.md'
-      - '**.xml'
-      - '**.XML'
-      - '**.sh'
-      - '.github/**/*'
+    paths: 
+      - '**_manager.txt'
   pull_request:
-    paths-ignore: 
-      - '**.md'
-      - '**.xml'
-      - '**.XML'
-      - '**.sh'
-      - '.github/**/*'
+    paths: 
+      - '**_manager.txt'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
