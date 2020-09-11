@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file_name='/utilities/hms_deployment_manager.txt'
+file_name='${GITHUB_WORKSPACE}/hms_deployment_manager.txt'
 
 content=$(
   sed '
@@ -11,5 +11,8 @@ content=$(
 )
 
 if [ "$content" = 'DO NOT REMOVE FIRST THREE LINES' ]; then
-  echo 'Success'
+  echo 'Test Success'
+else
+echo 'Test Failed'
+exit 0
 fi
