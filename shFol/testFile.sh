@@ -1,6 +1,7 @@
 #!/bin/bash
 
-$file_content=`cat /utilities/hms_deployment_manager.txt`
+in_arg=$1
+$file_content=`cat $1`
 
 case $file_content in
   (*DO NOT REMOVE FIRST THREE LINES*)
