@@ -7,10 +7,14 @@ name: Workflow-Verify Dep Mgr File
 on:
   push:
     branches: [ master ]
+    paths: 
+      - '**_manager.txt'
     paths-ignore: 
       - '**.md'
       - '.github/**/*'
   pull_request:
+    paths: 
+      - '**_manager.txt'
     paths-ignore: 
       - '**.md'
       - '.github/**/*'
