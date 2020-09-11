@@ -1,6 +1,7 @@
 #!/bin/bash
 
-file_name='${GITHUB_WORKSPACE}/hms_deployment_manager.txt'
+GITHUB_WORKSPACE=$1
+file_name=${GITHUB_WORKSPACE}/hms_deployment_manager.txt
 
 content=$(
   sed '
