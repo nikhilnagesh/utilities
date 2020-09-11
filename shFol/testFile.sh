@@ -1,7 +1,7 @@
 #!/bin/bash
 
 in_arg=$1
-$file_content=`cat $1`
+file_content=`cat $1`
 
 case $file_content in
   (*DO NOT REMOVE FIRST THREE LINES*)
