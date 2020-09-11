@@ -11,12 +11,14 @@ on:
       - '**.md'
       - '**.xml'
       - '**.XML'
+      - '**.sh'
       - '.github/**/*'
   pull_request:
     paths-ignore: 
       - '**.md'
       - '**.xml'
       - '**.XML'
+      - '**.sh'
       - '.github/**/*'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
