@@ -1,1 +1,1 @@
-# Built a test GitHub Action to test Deployment Manager File
+# Built a test GitHub Actions to test Deployment Manager File
