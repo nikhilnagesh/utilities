@@ -25,10 +25,15 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Greet
-        run: echo Hi There!
-
+        run: echo Hi There
+      # Display a path
+      - name: Display path
+        run: echo $PATH
+        shell: bash
+         
       # Runs a set of commands using the runners shell
       - name: Testing hms_deployment manager
         run: |
             bash testFile.sh
+            uses: /utilities/hms_deployment_manager.txt
         working-directory: ${{env.working-directory}}
