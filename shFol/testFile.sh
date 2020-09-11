@@ -1,13 +1,15 @@
 #!/bin/bash
 
-in_arg=$1
-file_content=`cat $1`
+file_name='hms_deployment_manager.txt'
 
-case $file_content in
-  (*DO NOT REMOVE FIRST THREE LINES*)
-     echo "hms_deployment_manager file is good for running CI/CD"
-     ;;  
-  (*)
-     echo "hms_deployment_manager file is not good"
-     exit(1)
-esac
+content=$(
+  sed '
+    s/[[:space:]]\{1,\}/ /g; # turn sequences of spacing characters into one SPC
+    s/[^[:print:]]//g; # remove non-printable characters
+    s/^ //; s/ $//; # remove leading and trailing space
+    q; # quit after first line' < "$file_name"
+)
+
+if [ "$content" = 'DO NOT REMOVE FIRST THREE LINES' ]; then
+  echo 'Success'
+fi
