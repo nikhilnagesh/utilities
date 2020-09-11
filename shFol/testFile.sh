@@ -14,6 +14,6 @@ content=$(
 if [ "$content" = 'DO NOT REMOVE FIRST THREE LINES' ]; then
   echo 'Test Success'
 else
-echo 'Test Failed'
-exit 0
+echo 'Test Failed - hms_deployment_manager.txt is not correct'
+exit 1
 fi
