@@ -35,13 +35,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Greet
-        run: echo Hi There
-      # Display a path
-      - name: Checking shell
-        run: pwd && whoami && ls -l
+        run: echo Hi There!
          
       # Runs a set of commands using the runners shell
-      - name: Testing hms_deployment manager
+      - name: Validate hms_deployment_manager
         run: |
             arg1=`pwd`
             bash ${GITHUB_WORKSPACE}/shFol/testFile.sh $arg1
