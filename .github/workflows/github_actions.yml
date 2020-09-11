@@ -32,4 +32,4 @@ jobs:
       - name: Testing hms_deployment manager
         run: |
             arg1=`pwd`
-            bash ${GITHUB_WORKSPACE}/shFol/testFile.sh arg1
+            bash ${GITHUB_WORKSPACE}/shFol/testFile.sh $arg1
