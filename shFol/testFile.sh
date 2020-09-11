@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file_name='hms_deployment_manager.txt'
+file_name='/utilities/hms_deployment_manager.txt'
 
 content=$(
   sed '
