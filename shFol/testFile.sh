@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITHUB_WORKSPACE=`pwd`
+GITHUB_WORKSPACE=$1
 file_name=${GITHUB_WORKSPACE}/hms_deployment_manager.txt
 
 content1=$(
@@ -10,6 +10,8 @@ content1=$(
     s/^ //; s/ $//; # remove leading and trailing space
     q; # quit after first line' < "$file_name"
 )
+
+echo $content1
 
 content2=$(
   sed -n '2{p;q}' < "$file_name"
