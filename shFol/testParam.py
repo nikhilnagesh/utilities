@@ -101,11 +101,11 @@ def main():
     for fileName in os.listdir(vlParamDir):
         if fileName.endswith(".ini"):
             try:
-                vlOpenFile = open(vlParamDir + '/' + str(currFile), 'r')
+                vlOpenFile = open(vlParamDir + '/' + fileName, 'r')
                 # print("Parameter file read successful")
             except IOError:
                 print("Failed to read the parameter file ".ljust(vgWriteFmt, ' ') +
-                  ":{}\n".format(str(currFile)))
+                  ":{}\n".format(fileName))
                 sys.exit(1)
             # Call the method to validate parameter file
             func_ValidateParam(vlOpenFile)
