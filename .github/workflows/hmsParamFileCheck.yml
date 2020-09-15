@@ -24,6 +24,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
+    
+    - name: Changed files info
+      run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
 
       # Runs a single command using the runners shell
     - name: Greetings
