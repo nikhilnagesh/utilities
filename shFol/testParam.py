@@ -20,6 +20,7 @@ import xml.etree.ElementTree as ET
 import re
 import sys
 from datetime import datetime
+import pathlib
 
 #######################################################################################################################################
 #  Global Variables
