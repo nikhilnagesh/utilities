@@ -4,7 +4,7 @@
 #  Author: Nikhil Nagesh
 #  Email: Nikhil.Nagesh@evry.com
 #  Created Date:  08/26/2020
-#  Last Modified Date: 08/26/2020
+#  Last Modified Date: 09/15/2020
 #  Executing method: 
 #  Additional Arguments: None
 #  Property Files used: None
@@ -58,6 +58,7 @@ def func_ValidateParam(arg_ParamFile):
                     print(
                         "Line Number :{} Connection {} is not proper - FAILED".
                         format(iLnNum, vlKey))
+                    sys.exit(1)
             if re.match("(.*)DBConnection_TARGET(.*)", vlKey):
                 if vlKey[vlKey.find('=') + 1:].upper(
                 ) == 'ECPROD_EXHMS3' or vlKey[vlKey.find('=') +
@@ -68,8 +69,9 @@ def func_ValidateParam(arg_ParamFile):
                     print(
                         "Line Number :{} Connection {} is not proper - FAILED".
                         format(iLnNum, vlKey))
+                    sys.exit(1)
             if re.match("(.*)BaseFileDSN(.*)", vlKey):
-                if vlKey[vlKey.find('=') + 1:].startswith('P.HMS.'):
+                if vlKey[vlKey.find('=') + 1:].startswith('P.HMS.TPL'):
                     print("BaseFileDSN starts with P.HMS.TPL. - PASS")
                 else:
                     print(
@@ -77,7 +79,7 @@ def func_ValidateParam(arg_ParamFile):
                         format(iLnNum, vlKey))
                     sys.exit(1)
             if re.match("(.*)TargetFileDSN(.*)", vlKey):
-                if vlKey[vlKey.find('=') + 1:].startswith('"P.HMS.'):
+                if vlKey[vlKey.find('=') + 1:].startswith('"P.HMS.TPL'):
                     print("TargetFileDSN starts with P.HMS.TPL. - PASS")
                 else:
                     print(
