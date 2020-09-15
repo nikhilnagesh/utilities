@@ -101,6 +101,7 @@ def main():
     for fileName in os.listdir(vlParamDir):
         if fileName.endswith(".ini"):
             try:
+                print(fileName)
                 vlOpenFile = open(vlParamDir + '/' + fileName, 'r')
                 # print("Parameter file read successful")
             except IOError:
