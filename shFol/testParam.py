@@ -97,18 +97,21 @@ def func_ValidateParam(arg_ParamFile):
 def main():
     #Read the param file
     vlParamDir=vlCurWrDir+'/param/Provider'
-    currentDirectory = pathlib.Path(vlParamDir)
     filePattern = '*.ini'
-    for currFile in currentDirectory.glob(filePattern):
-        try:
-            vlOpenFile = open(vlParamDir + '/' + str(currFile), 'r')
-            # print("Parameter file read successful")
-        except IOError:
-            print("Failed to read the parameter file ".ljust(vgWriteFmt, ' ') +
+    for fileName in os.listdir(vlParamDir):
+        if fileName.endswith(".ini"):
+            try:
+                vlOpenFile = open(vlParamDir + '/' + str(currFile), 'r')
+                # print("Parameter file read successful")
+            except IOError:
+                print("Failed to read the parameter file ".ljust(vgWriteFmt, ' ') +
                   ":{}\n".format(str(currFile)))
-            sys.exit(1)
-        # Call the method to validate parameter file
-        func_ValidateParam(vlOpenFile)
+                sys.exit(1)
+            # Call the method to validate parameter file
+            func_ValidateParam(vlOpenFile)
+            continue
+        else:
+            continue
 
 
 if __name__ == "__main__":
