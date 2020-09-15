@@ -32,7 +32,7 @@ vgInfoFmt = 50
 #  Input Arguments
 #######################################################################################################################################
 
-pParam = '818_X3T_PROVIDER'
+
 
 #######################################################################################################################################
 #  Config Folders Read, Report Files and Log files creation
@@ -96,16 +96,18 @@ def func_ValidateParam(arg_ParamFile):
 def main():
     #Read the param file
     vlParamDir=vlCurWrDir+'/param/Provider'
-    try:
-        vlOpenFile = open(vlParamDir + '/' + pParam + '.ini', 'r')
-        # print("Parameter file read successful")
-    except IOError:
-        print("Failed to read the parameter file ".ljust(vgWriteFmt, ' ') +
-              ":{}\n".format(pParam + '.ini'))
-        sys.exit(1)
-
-    # Call the method to validate parameter file
-    func_ValidateParam(vlOpenFile)
+    currentDirectory = pathlib.Path(vlParamDir)
+    filePattern = '*.ini'
+    for currFile in currentDirectory.glob(filePattern):
+        try:
+            vlOpenFile = open(vlParamDir + '/' + currFile + '.ini', 'r')
+            # print("Parameter file read successful")
+        except IOError:
+            print("Failed to read the parameter file ".ljust(vgWriteFmt, ' ') +
+                  ":{}\n".format(currFile + '.ini'))
+            sys.exit(1)
+        # Call the method to validate parameter file
+        func_ValidateParam(vlOpenFile)
 
 
 if __name__ == "__main__":
