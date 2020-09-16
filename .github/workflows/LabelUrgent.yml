@@ -1,9 +1,8 @@
 name: "Set Urgent Deployment Label"
 on:
-  issues:
-    types: [opened]
+  push:
+    branches: [master]
   pull_request:
-    types: [opened]
 
 jobs:
   test:
