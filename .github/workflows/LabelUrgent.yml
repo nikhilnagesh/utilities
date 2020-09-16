@@ -1,5 +1,5 @@
 name: "Set Urgent Deployment Label"
-on:
+on: 
   pull_request:
     paths: 
       - "**"
@@ -7,9 +7,12 @@ jobs:
   LabelUrgent:
     runs-on: ubuntu-latest
     steps:
-    - name: Labeler
+    - name: LabelerPR
       uses: actions/labeler@v2
       if: contains(github.event.pull_request.title, 'URGENT')
+    - name: LabelerPush
+      uses: actions/labeler@v2
+      if: contains(github.event.push.title, 'URGENT')  
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         configuration-path: .github/labeler.yml
