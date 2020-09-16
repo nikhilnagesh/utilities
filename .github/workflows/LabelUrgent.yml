@@ -1,5 +1,7 @@
 name: "Set Urgent Deployment Label"
-on: 
+on:
+  push:
+     branches: [ master ] 
   pull_request:
     paths: 
       - "**"
