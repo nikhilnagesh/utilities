@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Issue Auto Labeling and Assigning
-      uses: Naturalclar/issue-action@v2.0.1
+    - name: Auto Labelling
+      uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        title-or-body: "both"
-        parameters: '[{"keywords":["urgent","Urgent","Emergency"],"labels":["URGENT"]}]'
+        configuration-path: .github/triggerLabel.yml
+
 
