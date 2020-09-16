@@ -4,7 +4,7 @@ on:
     paths: 
       - "**"
 jobs:
-  LabelUrgent:
+  LabelPR:
     runs-on: ubuntu-latest
     steps:
     - name: LabelerPRCheck1
@@ -12,7 +12,9 @@ jobs:
       if: contains(github.event.pull_request.title, 'URGENT')
     - name: LabelerPRCheck2
       uses: actions/labeler@v2
-      if: contains(github.event.pull_request.title, 'EMERGENCY')  
+      if: contains(github.event.pull_request.title, 'EMERGENCY')
+    - name: LabelAllNick
+      uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         configuration-path: .github/labeler.yml
