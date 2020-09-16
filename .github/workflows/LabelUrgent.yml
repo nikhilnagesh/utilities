@@ -3,9 +3,10 @@ on:
   push:
     branches: [master]
   pull_request:
-
+    paths: 
+      - "**"
 jobs:
-  job1:
+  test:
     runs-on: ubuntu-latest
     steps:
     - name: Labeler
