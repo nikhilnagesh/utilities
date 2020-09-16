@@ -23,7 +23,11 @@ jobs:
 # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
-      name: GitHub Artifacts
+      with:
+        fetch-depth: 1
+    - run: git diff --name-only HEAD HEAD~1 > UpdatedFiles.txt
+      
+
     - uses: actions/setup-python@v2
  
       # Runs a single command using the runners shell
@@ -32,7 +36,6 @@ jobs:
       
     - name: Listing files
       run: |
-        git diff --name-only HEAD HEAD~1 > UpdatedFiles.txt
         cat UpdatedFiles.txt
          
       # Runs a set of commands using the runners shell
