@@ -4,9 +4,11 @@ on:
     paths: 
       - "**"
 jobs:
-  LabelUrgent:
+  Labeler:
     runs-on: ubuntu-latest
     steps:
+    - name: LabelNickToAll
+      uses: actions/labeler@v2
     - name: LabelerPRCheck1
       uses: actions/labeler@v2
       if: contains(github.event.pull_request.title, 'URGENT')
