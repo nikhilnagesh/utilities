@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  Label-UrgentRelease:
+  job1:
     runs-on: ubuntu-latest
     steps:
     - name: Labeler
