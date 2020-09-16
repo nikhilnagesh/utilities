@@ -14,5 +14,5 @@ jobs:
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         title-or-body: "both"
-        parameters: '[{"keywords":["urgent","Urgent"]}]'
-        configuration-path: .github/triggerLabel.yml
+        parameters: '[{"keywords":["urgent","Urgent","Emergency"],"labels":["URGENT"]}]'
+
