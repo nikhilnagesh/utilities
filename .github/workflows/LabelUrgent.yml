@@ -9,7 +9,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Urgency-Labeler
-        uses: actions/labeler@v2.2.0
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+    - name: Labeler
+      uses: actions/labeler@v2
+      if: contains(github.event.pull_request.title, 'URGENT')
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
