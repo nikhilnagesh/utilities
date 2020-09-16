@@ -1,12 +1,10 @@
 name: "Set Urgent Deployment Label"
 on:
-  push:
-    branches: [master]
   pull_request:
     paths: 
       - "**"
 jobs:
-  test:
+  LabelUrgent:
     runs-on: ubuntu-latest
     steps:
     - name: Labeler
