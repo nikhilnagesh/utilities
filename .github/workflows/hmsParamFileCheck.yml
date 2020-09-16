@@ -23,19 +23,13 @@ jobs:
 # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 1
-
     - uses: actions/setup-python@v2
  
       # Runs a single command using the runners shell
     - name: Greetings
       run: echo Hi There! Validating the param file
       
-    - name: Listing files
-      run: |
-        cat UpdatedFiles.txt
-         
+        
       # Runs a set of commands using the runners shell
     - name: Validate Parameter File
       run: |
