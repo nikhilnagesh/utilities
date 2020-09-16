@@ -13,8 +13,9 @@ jobs:
     - name: LabelerPRCheck2
       uses: actions/labeler@v2
       if: contains(github.event.pull_request.title, 'EMERGENCY')
-    - name: LabelAllNick
+    - name: LabelNick
       uses: actions/labeler@v2
+      if: contains(github.event.pull_request.title, 'NICK')
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         configuration-path: .github/labeler.yml
