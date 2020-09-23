@@ -21,7 +21,7 @@ jobs:
       - name: Upload files
         uses: actions/upload-artifact@v2
         with:
-          name: UploadFiles
+          name: myArtifact
           path: Latestfiles
           
           
@@ -33,6 +33,6 @@ jobs:
       - name: Download files
         uses: actions/download-artifact@v2
         with:
-          name: DownloadFiles
+          name: myArtifact
           path: Latestfiles
 
