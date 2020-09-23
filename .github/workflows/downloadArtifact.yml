@@ -12,17 +12,25 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  job_1:
+    name: Build and Upload Artificat
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - uses: actions/download-artifact@v2
+      - name: Upload files
+        uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
-          path: ${GITHUB_WORKSPACE}
+          name: UploadFiles
+          path: ${GITHUB_WORKSPACE}/files
+          
+          
+  job_2:
+    name: Download Artifact
+    needs: [job_1]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download files
+        uses: actions/download-artifact@v2
+        with:
+          name: DownloadFiles
+          path: ${GITHUB_WORKSPACE}/files
+
