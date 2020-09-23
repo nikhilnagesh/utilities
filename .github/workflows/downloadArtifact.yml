@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: myArtifact
-          path: Latestfiles
+          path: ${GITHUB_WORKSPACE}
           
           
   job_2:
@@ -34,5 +34,5 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: myArtifact
-          path: Latestfiles
+          path: ${GITHUB_WORKSPACE}
 
