@@ -1,2 +1,5 @@
 URGENT:
 - "**"
+
+param:
+- param/**/*.ini
