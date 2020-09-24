@@ -7,15 +7,20 @@ jobs:
   LabelPR:
     runs-on: ubuntu-latest
     steps:
-    - name: LabelerPRCheck1
-      uses: actions/labeler@v2
-      if: contains(github.event.pull_request.title, 'URGENT')
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        configuration-path: .github/labeler.yml
-    - name: LabelerPRCheck2
-      uses: actions/labeler@v2
-      if: contains(github.event.pull_request.title, 'EMERGENCY')
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        configuration-path: .github/labeler.yml
+      - name: LabelerPRCheck1
+        uses: actions/labeler@v2
+        if: contains(github.event.pull_request.title, 'URGENT')
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/labeler.yml
+      - name: LabelerPRCheck2
+        uses: actions/labeler@v2
+        if: contains(github.event.pull_request.title, 'EMERGENCY')
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/labeler.yml
+      - name: LabelerPRCheck3
+        uses: actions/labeler@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/labeler.yml
