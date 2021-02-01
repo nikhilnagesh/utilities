@@ -1,1 +1,1 @@
-** Testing the pull request template **
+* Testing the pull request template *
