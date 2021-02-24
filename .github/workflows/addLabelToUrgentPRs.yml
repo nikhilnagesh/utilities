@@ -1,0 +1,27 @@
+# This is a GitHub Actions Workflow for labeling a PR based on keyword in PR Title.
+# Author        : Nikhil Nagesh
+# Email         : Nikhil.Nagesh@evry.com
+# Created Date  : 09-16-2020
+# Modified Date : 12-01-2020 
+
+name: "labelUrgentPRs"
+on:
+  pull_request:
+    paths: 
+      - "**"
+jobs:
+  LabelPR:
+    runs-on: ubuntu-latest
+    steps:
+    - name: LabelerPRCheck
+      uses: actions/labeler@v2
+      if: contains(github.event.pull_request.title, 'URGENT') || contains(github.event.pull_request.title, 'EMERGENCY')
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: .github/labelUrgent.yml
+    # - name: LabelerPRCheck2
+      # uses: actions/labeler@v2
+      # if: contains(github.event.pull_request.title, 'EMERGENCY')
+      # with:
+        # repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        # configuration-path: .github/labelUrgent.yml
