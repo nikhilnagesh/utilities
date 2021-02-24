@@ -1,0 +1,21 @@
+# This is a git action to create a label as and when a PR is opened
+# Author : Nikhil Nagesh
+# Email : Nikhil.Nagesh@evry.com
+# Create Date : 01/20/2021
+
+
+name: labelOpenedPRs
+
+on:
+  pull_request:
+    branches: 
+      - master
+
+jobs:
+  add_labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v2
+        with:
+          repo-token: "${{secrets.GITHUB_TOKEN}}"
+          configuration-path: .github/multiLabel.yml

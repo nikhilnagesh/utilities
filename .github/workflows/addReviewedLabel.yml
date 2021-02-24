@@ -1,0 +1,24 @@
+# This is a git action to create a label after pull request is reviewed and approved.
+# Author : Nikhil Nagesh
+# Email : Nikhil.Nagesh@evry.com
+# Create Date : 01/20/2021
+
+
+on:
+  pull_request_review: 
+
+name: labelApprovedPRs
+
+jobs:
+  labelWhenApproved:
+    name: Label when approved
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Label approved pull requests
+      uses: abinoda/label-when-approved-action@1.0.5
+      env:
+        APPROVALS: "1"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ADD_LABEL: "PR Reviewed"
+        REMOVE_LABEL: "Needs%20Review"
